@@ -9,12 +9,14 @@ const IpAddressComponent = React.forwardRef(function TextMaskCustom(
   return (
     <IMaskInput
       {...other}
-      mask="000.000.0.0"
+      mask="000.000.000.000"
       definitions={{
         "#": /[1-9]/,
       }}
       inputRef={ref}
-      onAccept={(value) => onChange({ target: { name: props.name, value } })}
+      onAccept={(value) => {
+        onChange({ target: { name: props.name, value } });
+      }}
       overwrite
     />
   );

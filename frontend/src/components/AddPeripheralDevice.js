@@ -17,7 +17,6 @@ const AddPeripheralDevice = ({
   handleSubmit,
   initialData,
 }) => {
-  console.log("initial Data", initialData.vendor);
   const [vendor, setVendor] = useState("");
   const [status, setStatus] = useState(true);
   const submitForm = (event) => {

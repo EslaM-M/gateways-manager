@@ -16,7 +16,6 @@ import { addGateWay } from "../apis/gateway";
 import { withRouter } from "react-router";
 
 const Gateway = ({ history }) => {
-  console.log(history);
   const { data, refetch } = useGateways();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -56,7 +55,6 @@ const Gateway = ({ history }) => {
             <TableCell>SerialNumber</TableCell>
             <TableCell>Created at</TableCell>
             <TableCell>Updated at</TableCell>
-            {/* <TableCell>Actions</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -66,7 +64,6 @@ const Gateway = ({ history }) => {
               onClick={(event) => {
                 event.preventDefault();
                 history.push(`/${row._id}`);
-                console.log("row");
               }}
               key={row._id}
             >
@@ -81,14 +78,6 @@ const Gateway = ({ history }) => {
               <TableCell>
                 {format(new Date(row.updatedAt), "dd:MMM:yyyy")}
               </TableCell>
-              {/* <TableCell
-                onClick={(event) => {
-                  event.preventDefault();
-                  console.log(event.target);
-                }}
-              >
-                <DeleteIcon />
-              </TableCell> */}
             </TableRow>
           ))}
         </TableBody>

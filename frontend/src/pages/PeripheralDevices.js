@@ -27,7 +27,8 @@ const Gateway = ({ history }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
 
-  const [selectedRow, setSelectedRow] = useState("");
+  const [selectedRow, setSelectedRow] = useState(null);
+
   const [initialDeviceModalData, setInitialDeviceModalData] = useState({});
   const handleClose = () => {
     setInitialDeviceModalData({});

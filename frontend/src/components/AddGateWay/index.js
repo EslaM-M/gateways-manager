@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import React, { useState } from "react";
-import IpAddressComponent from "./IpAddressComponent";
+import IpAddressComponent from "../IpAddressComponent";
 const AddGateWay = ({ open, handleClose, handleSubmit }) => {
   const [name, setName] = useState("");
   const [ipAddress, setIpAddress] = useState("");
@@ -65,6 +65,7 @@ const AddGateWay = ({ open, handleClose, handleSubmit }) => {
                 setName(event.target.value);
               }}
               name="gateway-name"
+              inputProps={{ "data-testid": "gateway-name" }}
               id="gateway-name"
             />
           </FormControl>
@@ -73,9 +74,11 @@ const AddGateWay = ({ open, handleClose, handleSubmit }) => {
             <Input
               value={ipAddress}
               name="ip-address"
+              inputProps={{ "data-testid": "ip-address" }}
               id="ip-address"
               onChange={(event) => {
-                setIpAddress(event.target.value);
+                const value = event.target.value;
+                setIpAddress(value);
               }}
               inputComponent={IpAddressComponent}
             />
