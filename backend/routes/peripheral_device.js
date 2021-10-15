@@ -9,12 +9,17 @@ const {
   remove,
   update,
 } = require('../controllers/peripheral_device');
-const { postValidator } = require('../validators/peripheral_device');
+const {
+  postValidator,
+  getValidator,
+  removeValidator,
+  updateValidator,
+} = require('../validators/peripheral_device');
 
 /* GET users listing. */
-router.get('/:id', get);
-router.delete('/:id', remove);
-router.put('/:id', update);
+router.get('/:id', celebrate(getValidator), get);
+router.delete('/:id', celebrate(removeValidator), remove);
+router.put('/:id', celebrate(updateValidator), update);
 
 /* GET users listing. */
 router.post('/', celebrate(postValidator), post);
