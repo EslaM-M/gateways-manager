@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "backend scaffolding"
+        "backend scaffolding",
+        "frontend scafolding"
     ]
 }
